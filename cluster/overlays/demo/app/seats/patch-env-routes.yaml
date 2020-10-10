@@ -1,0 +1,15 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seat-ui
+spec:
+  template:
+    spec:
+      containers:
+        - name: seat-ui
+          env:
+          - name: ROUTE_HOSTNAME
+            value: http://seat-reader-seating.apps.cluster-eeb9.eeb9.example.opentlc.com/sa/integration
+          #- name: API_KEY
+          #  value: a486f905b59a96e6c4c59d34365290c8
