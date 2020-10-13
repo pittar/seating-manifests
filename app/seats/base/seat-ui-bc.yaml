@@ -3,7 +3,7 @@ kind: BuildConfig
 metadata:
   annotations:
     app.openshift.io/vcs-ref: master
-    app.openshift.io/vcs-uri: https://github.com/gnunn1/seating
+    app.openshift.io/vcs-uri: https://github.com/pittar/seating
   labels:
     app: seats
     app.kubernetes.io/component: frontend
@@ -27,7 +27,7 @@ spec:
     contextDir: /seat-ui
     git:
       ref: master
-      uri: https://github.com/gnunn1/seating
+      uri: https://github.com/pittar/seating
     type: Git
   strategy:
     sourceStrategy:
