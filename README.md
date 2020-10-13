@@ -66,14 +66,14 @@ If there is no 1.6 tag (i.e. only 1.5 or earlier shows), import the Fuse 7.6 ima
 
 3. Install the seats application:
 
-    ```oc apply -k cluster/overlays/<your cluster>/app/seats```
+    ```oc apply -k cluster/overlays/demo/app/seats```
 
     In a smallish cluster wait for all the builds to be completed and deployed before moving onto the next app. In a larger cluster
     you can deploy everything in parallel.
 
 4. Install the registration application:
 
-    ```oc apply -k cluster/overlays/<your cluster>/app/registration```
+    ```oc apply -k cluster/overlays/demo/app/registration```
 
 5. Install the Dashboard. All of the individual UIs are available, the dashboard deploys a simple iFrame application so that everything can be viewed in one window.
 
@@ -81,7 +81,7 @@ If there is no 1.6 tag (i.e. only 1.5 or earlier shows), import the Fuse 7.6 ima
 
 6. Optionally deploy 3scale gateways. Note I use a sealed secret in my ocplab cluster which you will see in the overlay, you will need to replace this your own secret in order for the gateways to connect to the 3scale admin portal. See the 3scale docs.
 
-    ```kustomize build cluster/overlays/<your cluster>/app/apicast | oc apply -f -```
+    ```kustomize build cluster/overlays/demo/app/apicast | oc apply -f -```
 
     I've opted to configure the endpoints in 3scale using the API as a Product feature as per the diagram below, however you can configure it however you like just make sure to update the ```ROUTE_HOSTNAME``` environment variables to match your configuration.
 
@@ -106,13 +106,13 @@ If there is no 1.6 tag (i.e. only 1.5 or earlier shows), import the Fuse 7.6 ima
 
 4. Install the monitoring package
 
-    ```oc apply -k cluster/overlays/<your cluster>/monitoring```
+    ```oc apply -k cluster/overlays/demo/monitoring```
 
 ## Access rights
 
 1. Add non-admin user to projects (user1 in ocplab example)
 
-    ```oc apply -k cluster/overlays/<your cluster>/security```
+    ```oc apply -k cluster/overlays/demo/security```
 
 ## 3scale Developer Portal
 
